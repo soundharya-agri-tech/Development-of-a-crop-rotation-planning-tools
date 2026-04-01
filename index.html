@@ -1,22 +1,66 @@
+HTML
 <!DOCTYPE html>
 <html>
 <head>
-<title>Crop Rotation Tool</title>
+<title>Crop Rotation Planning Tool</title>
+
+<style>
+body{
+font-family: Arial;
+text-align:center;
+margin-top:40px;
+}
+
+select, button{
+padding:10px;
+margin:10px;
+}
+</style>
+
 </head>
 
 <body>
 
 <h1>Crop Rotation Planning Tool</h1>
 
+<label>Select Soil Type:</label>
+<br>
+
+<select id="soil">
+<option>Black Soil</option>
+<option>Red Soil</option>
+<option>Sandy Soil</option>
+</select>
+
+<br>
+
 <button onclick="show()">Generate Plan</button>
 
-<p id="result"></p>
+<h3 id="result"></h3>
 
 <script>
+
 function show(){
-document.getElementById("result").innerHTML =
-"Year 1 - Rice <br> Year 2 - Groundnut <br> Year 3 - Vegetables";
+
+var soil=document.getElementById("soil").value;
+
+if(soil=="Black Soil"){
+document.getElementById("result").innerHTML=
+"Year 1 - Cotton <br> Year 2 - Groundnut <br> Year 3 - Wheat";
 }
+
+else if(soil=="Red Soil"){
+document.getElementById("result").innerHTML=
+"Year 1 - Millets <br> Year 2 - Pulses <br> Year 3 - Groundnut";
+}
+
+else{
+document.getElementById("result").innerHTML=
+"Year 1 - Coconut <br> Year 2 - Vegetables <br> Year 3 - Pulses";
+}
+
+}
+
 </script>
 
 </body>
