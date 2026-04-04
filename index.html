@@ -119,6 +119,89 @@ HTML
 
 <br><br>
 <br><br>
-<br><br>
+<br><HTML>HTML
+<script>
+function generatePlan() {
+
+var soil = document.getElementById("soil").value;
+var season = document.getElementById("season").value;
+var land = document.getElementById("land").value;
+var district = document.getElementById("district").value;
+
+var crop;
+
+if(district == "Chengalpattu"){
+crop = "Year 1: Paddy <br> Year 2: Groundnut <br> Year 3: Vegetables";
+}
+
+else if(district == "Kanchipuram"){
+crop = "Year 1: Paddy <br> Year 2: Pulses <br> Year 3: Millets";
+}
+
+else if(district == "Villupuram"){
+crop = "Year 1: Groundnut <br> Year 2: Millets <br> Year 3: Pulses";
+}
+
+else if(district == "Cuddalore"){
+crop = "Year 1: Rice <br> Year 2: Blackgram <br> Year 3: Vegetables";
+}
+
+else if(district == "Salem"){
+crop = "Year 1: Tapioca <br> Year 2: Maize <br> Year 3: Vegetables";
+}
+
+else if(district == "Erode"){
+crop = "Year 1: Turmeric <br> Year 2: Maize <br> Year 3: Pulses";
+}
+
+else if(district == "Coimbatore"){
+crop = "Year 1: Maize <br> Year 2: Cotton <br> Year 3: Vegetables";
+}
+
+else if(district == "Tiruppur"){
+crop = "Year 1: Cotton <br> Year 2: Maize <br> Year 3: Pulses";
+}
+
+else if(district == "Madurai"){
+crop = "Year 1: Paddy <br> Year 2: Groundnut <br> Year 3: Vegetables";
+}
+
+else if(district == "Trichy"){
+crop = "Year 1: Paddy <br> Year 2: Pulses <br> Year 3: Vegetables";
+}
+
+else if(district == "Thanjavur"){
+crop = "Year 1: Paddy <br> Year 2: Blackgram <br> Year 3: Vegetables";
+}
+
+else if(district == "Nagapattinam"){
+crop = "Year 1: Paddy <br> Year 2: Pulses <br> Year 3: Groundnut";
+}
+
+else if(district == "Tirunelveli"){
+crop = "Year 1: Cotton <br> Year 2: Maize <br> Year 3: Pulses";
+}
+
+else if(district == "Thoothukudi"){
+crop = "Year 1: Cotton <br> Year 2: Blackgram <br> Year 3: Groundnut";
+}
+
+else if(district == "Kanyakumari"){
+crop = "Year 1: Banana <br> Year 2: Vegetables <br> Year 3: Pulses";
+}
+
+else{
+crop = "Year 1: Paddy <br> Year 2: Pulses <br> Year 3: Vegetables";
+}
+
+document.getElementById("result").innerHTML =
+"Soil: " + soil + "<br>" +
+"Season: " + season + "<br>" +
+"Land Size: " + land + " acre<br>" +
+"District: " + district + "<br><br>" +
+"Recommended Crop Rotation:<br>" + crop;
+
+}
+  </script>
 </body>
 </html>
