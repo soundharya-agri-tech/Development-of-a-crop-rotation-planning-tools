@@ -116,8 +116,11 @@ HTML
 <option>Kanyakumari</option>
 </select>
 <br><br>
+<br><br>
 <button onclick="generatePlan()">Generate Plan</button>
-<p id="result"></p> 
+
+<br><br>
+<div id="result"></div>
 <br><br>
 <br><HTML>HTML
 <script>
@@ -246,7 +249,30 @@ document.getElementById("result").innerHTML =
 "District: " + district + "<br><br>" +
 "Recommended Crop Rotation:<br>" + crop +
 "<br><br>Fertilizer Recommendation:<br>" + fertilizer;
+<script>
 
+function generatePlan(){
+
+var soil = document.getElementById("soil").value;
+var season = document.getElementById("season").value;
+var district = document.getElementById("district").value;
+var land = document.getElementById("land").value;
+
+var crop = "Year 1 - Cotton <br> Year 2 - Groundnut <br> Year 3 - Wheat";
+
+var fertilizer = "Recommended: FYM + NPK fertilizer";
+
+document.getElementById("result").innerHTML =
+"Soil: " + soil + "<br>" +
+"Season: " + season + "<br>" +
+"District: " + district + "<br>" +
+"Land size: " + land + "<br><br>" +
+crop + "<br><br>" +
+fertilizer;
+
+}
+
+</script>
   }</script>
 </body>
 </html>
