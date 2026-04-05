@@ -214,14 +214,26 @@ document.getElementById("result").innerHTML =
 else{
 crop = "Year 1: Paddy <br> Year 2: Pulses <br> Year 3: Vegetables";
 }
+var fertilizer;
 
+if(soil == "Red Soil"){
+fertilizer = "FYM + NPK (17:17:17)";
+}
+
+else if(soil == "Clay Soil"){
+fertilizer = "Urea + DAP + Potash";
+}
+
+else{
+fertilizer = "Organic Compost + NPK";
+  }
 document.getElementById("result").innerHTML =
 "Soil: " + soil + "<br>" +
 "Season: " + season + "<br>" +
 "Land Size: " + land + " acre<br>" +
 "District: " + district + "<br><br>" +
 "Recommended Crop Rotation:<br>" + crop;
-
+"<br><br>Fertilizer Recommendation:<br>" + fertilizer;
 }
   </script>
 </body>
