@@ -386,33 +386,8 @@ document.getElementById("result").innerHTML =
 <option>Chennai</option>
 </select>
 
-<br><br>
 
-<button onclick="generatePlan()">Generate Plan</button>
 
-<br><br>
-
-<div id="result"></div>
-
-<script>
-
-function generatePlan(){
-
-var season = document.getElementById("season").value;
-var soil = document.getElementById("soil").value;
-var land = document.getElementById("land").value;
-var district = document.getElementById("district").value;
-
-document.getElementById("result").innerHTML =
-"Season: " + season + "<br>" +
-"Soil: " + soil + "<br>" +
-"Land Size: " + land + "<br>" +
-"District: " + district + "<br><br>" +
-"Year 1: Paddy<br>" +
-"Year 2: Groundnut<br>" +
-"Year 3: Vegetables";
-
-}
 
 </script>
 </body>
