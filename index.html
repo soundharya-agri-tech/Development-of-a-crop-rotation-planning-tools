@@ -1,4 +1,4 @@
-MaduraiPE html>
+
 <html>
 <head>
 <title>Crop Rotation Planning Tool</title>
@@ -166,8 +166,7 @@ irrigation;
 <option>Thoothukudi</option>
 <option>Kanyakumari</option>
 </select>
-
-<script>
+function
 function generatePlan() {
 
 var soil = document.getElementById("soil").value;
@@ -245,7 +244,7 @@ document.getElementById("result").innerHTML =
 "District: " + district + "<br><br>" +
 "Recommended Crop Rotation:<br>" + crop;
 
-} function generatePlan(){
+} function onneratePlan(){
 
 var soil = document.getElementById("soil").value;
 var season = document.getElementById("season").value;
@@ -316,9 +315,7 @@ document.getElementById("result").innerHTML=
 }
 
 </script>
-else{
-crop = "Year 1: Rice <br> Year 2: Groundnut <br> Year 3: Vegetables"; 
-}
+
   
 </body>
 </html>
