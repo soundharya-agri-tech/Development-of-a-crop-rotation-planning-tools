@@ -35,12 +35,9 @@ margin:10px;
 <button onclick="show()">Generate Plan</button>
 
 <h3 id="result"></h3>
+  function show(){
 
-<script>
-<script>
-
-function show(){
-
+var season=document.getElementById("season").value;
 var soil=document.getElementById("soil").value;
 
 var cropPlan="";
@@ -48,20 +45,40 @@ var irrigation="";
 
 /* Crop Rotation */
 
-if(soil=="Black Soil"){
-cropPlan="Year 1 - Cotton <br> Year 2 - Groundnut <br> Year 3 - Pulses";
+if(season=="Kharif" && soil=="Black Soil"){
+cropPlan="Rice → Pulses → Vegetables";
 }
 
-else if(soil=="Red Soil"){
-cropPlan="Year 1 - Millets <br> Year 2 - Pulses <br> Year 3 - Vegetables";
+else if(season=="Rabi" && soil=="Black Soil"){
+cropPlan="Wheat → Groundnut → Pulses";
+}
+
+else if(season=="Summer" && soil=="Black Soil"){
+cropPlan="Cotton → Vegetables → Pulses";
+}
+
+else if(season=="Kharif" && soil=="Red Soil"){
+cropPlan="Millets → Pulses → Groundnut";
+}
+
+else if(season=="Rabi" && soil=="Red Soil"){
+cropPlan="Groundnut → Vegetables → Pulses";
 }
 
 else{
-cropPlan="Year 1 - Groundnut <br> Year 2 - Millets <br> Year 3 - Pulses";
+cropPlan="Millets → Pulses → Vegetables";
 }
 
 
 /* Irrigation */
+
+if(cropPlan.includes("Rice")){
+irrigation+="Rice - 5 days irrigation <br>";
+}
+
+if(cropPlan.includes("Wheat")){
+irrigation+="Wheat - 7 days irrigation <br>";
+}
 
 if(cropPlan.includes("Cotton")){
 irrigation+="Cotton - 10 days irrigation <br>";
@@ -95,6 +112,7 @@ cropPlan +
 irrigation;
 
 }
+
 
 </script>
 
