@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+MaduraiPE html>
 <html>
 <head>
 <title>Crop Rotation Planning Tool</title>
@@ -261,9 +261,64 @@ crop = "Year 1: Paddy <br> Year 2: Groundnut <br> Year 3: Vegetables";
 else if(district == "Madurai"){
 crop = "Year 1: Cotton <br> Year 2: Pulses <br> Year 3: Millets";
 }
+<script>
 
+function show(){
+
+var season=document.getElementById("season").value;
+var soil=document.getElementById("soil").value;
+
+var cropPlan="";
+var irrigation="";
+
+if(season=="Kharif" && soil=="Black Soil"){
+cropPlan="Rice → Pulses → Vegetables";
+}
+
+else if(season=="Rabi" && soil=="Black Soil"){
+cropPlan="Wheat → Groundnut → Pulses";
+}
+
+else if(season=="Kharif" && soil=="Red Soil"){
+cropPlan="Millets → Pulses → Groundnut";
+}
+
+else{
+cropPlan="Groundnut → Pulses → Vegetables";
+}
+
+if(cropPlan.includes("Rice")){
+irrigation+="Rice - 5 days irrigation <br>";
+}
+
+if(cropPlan.includes("Wheat")){
+irrigation+="Wheat - 7 days irrigation <br>";
+}
+
+if(cropPlan.includes("Groundnut")){
+irrigation+="Groundnut - 7 days irrigation <br>";
+}
+
+if(cropPlan.includes("Pulses")){
+irrigation+="Pulses - 10 days irrigation <br>";
+}
+
+if(cropPlan.includes("Vegetables")){
+irrigation+="Vegetables - Drip irrigation <br>";
+}
+
+document.getElementById("result").innerHTML=
+
+"<b>Crop Rotation:</b><br>"+cropPlan+
+
+"<br><br><b>Irrigation:</b><br>"+irrigation;
+
+}
+
+</script>
 else{
 crop = "Year 1: Rice <br> Year 2: Groundnut <br> Year 3: Vegetables"; 
 }
+  
 </body>
 </html>
